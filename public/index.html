@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Radio1.7 – studenckie radio z Krakowa | Słuchaj na żywo</title>
+  <meta name="description" content="Radio1.7 – najlepsze studenckie radio w Krakowie. Słuchaj anteny na żywo, czatuj ze słuchaczami, sprawdź ramówkę i czytaj newsy, wywiady oraz recenzje płyt. Centrum Mediów AGH.">
+  <meta name="keywords" content="Radio1.7, radio studenckie, Kraków, AGH, Centrum Mediów AGH, radio internetowe, koncerty, Juwenalia">
+  <meta name="theme-color" content="#070b0d">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://radio17.pl">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Radio1.7">
+  <meta property="og:title" content="Radio1.7 – studenckie radio z Krakowa">
+  <meta property="og:description" content="Słuchaj anteny na żywo, czatuj ze słuchaczami i bądź na bieżąco z krakowską sceną muzyczną.">
+  <meta property="og:url" content="https://radio17.pl">
+  <meta property="og:image" content="https://radio17.pl/img/opengraph/og-image.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://radio17.pl/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://radio17.pl/img/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://radio17.pl/img/favicons/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://emisja.radio17.pl" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RadioStation",
+    "name": "Radio1.7",
+    "url": "https://radio17.pl",
+    "logo": "https://radio17.pl/img/ld/logo.png",
+    "telephone": "+48664605251",
+    "email": "redakcja@radio17.pl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Rostafińskiego 8",
+      "postalCode": "30-072",
+      "addressLocality": "Kraków",
+      "addressCountry": "PL"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Sprite ikon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.86l11.1-6.86a1 1 0 0 0 0-1.72L9.52 4.28A1 1 0 0 0 8 5.14Z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4.5" width="4.2" height="15" rx="1.4"/><rect x="13.8" y="4.5" width="4.2" height="15" rx="1.4"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9.5v5a1 1 0 0 0 1 1h3l4.3 3.6a1 1 0 0 0 1.7-.77V5.67a1 1 0 0 0-1.7-.77L8 8.5H5a1 1 0 0 0-1 1Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9.5v5a1 1 0 0 0 1 1h3l4.3 3.6a1 1 0 0 0 1.7-.77V5.67a1 1 0 0 0-1.7-.77L8 8.5H5a1 1 0 0 0-1 1Z"/><path d="m17 9.5 5 5m0-5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 4h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.6l-4.3 3.4a.9.9 0 0 1-1.46-.7V18H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M3.4 11.1 20 3.6a.8.8 0 0 1 1.1 1l-7.5 16.6a.8.8 0 0 1-1.5-.1l-1.9-6.9-6.9-1.9a.8.8 0 0 1 0-1.6Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11Zm2 .6v.2l7 5 7-5v-.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.8l1.4 4-1.9 1.3a12 12 0 0 0 5.3 5.3l1.3-1.9 4 1.4v2.8a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V6.5l11-2.3V16M9 18a3 3 0 1 1-3-3 3 3 0 0 1 3 3Zm11-2a3 3 0 1 1-3-3 3 3 0 0 1 3 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.8" cy="7.2" r="1.1"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.7 2 12 2 12s0 3.3.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.5.4-4.8.4-4.8s0-3.3-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M5 9.5h3V19H5V9.5Zm1.5-4.7a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5ZM10 9.5h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3 0 3.6 2 3.6 4.5V19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19H10V9.5Z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M16.6 3h-3v11.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V8.8a5.7 5.7 0 1 0 4.9 5.6V9.2a7 7 0 0 0 4 1.3V7.4A4.2 4.2 0 0 1 16.6 3Z"/></symbol>
+    <symbol id="i-mixcloud" viewBox="0 0 24 24"><path d="M6.5 16.5a3 3 0 0 1-.4-6A5.5 5.5 0 0 1 16.7 9a4.2 4.2 0 0 1 .6 8.3M8 19.5h8M10 12.5v5m2-5v5m2-5v5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- ============ NAGŁÓWEK ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#live" aria-label="Radio1.7 – strona główna">
+        <img src="img/logo-light.png" alt="Radio1.7" width="1488" height="500">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Główna nawigacja">
+        <a href="#live" data-nav="live">Na żywo</a>
+        <a href="#ramowka" data-nav="ramowka">Ramówka</a>
+        <a href="#aktualnosci" data-nav="aktualnosci">Aktualności</a>
+        <a href="#blog" data-nav="blog">Blog muzyczny</a>
+        <a href="#hot17" data-nav="hot17">Gorąca 17</a>
+        <a href="#zespol" data-nav="zespol">Zespół</a>
+        <a href="#kontakt" data-nav="kontakt">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn--ghost btn--sm" type="button" id="headerChatBtn" data-chat-toggle aria-controls="chat">
+          <svg class="icon"><use href="#i-chat"/></svg>
+          <span>Czat</span>
+          <span class="badge" data-chat-badge hidden>0</span>
+        </button>
+        <button class="btn btn--primary btn--sm" type="button" id="headerPlayBtn" data-player-toggle>
+          <svg class="icon" data-icon-play><use href="#i-play"/></svg>
+          <svg class="icon" data-icon-pause hidden><use href="#i-pause"/></svg>
+          <span data-player-label>Słuchaj</span>
+        </button>
+        <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mainNav">
+          <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO / ANTENA + CZAT ============ -->
+    <section class="hero" id="live" aria-labelledby="heroTitle">
+      <div class="aurora" aria-hidden="true">
+        <span class="aurora__blob aurora__blob--1"></span>
+        <span class="aurora__blob aurora__blob--2"></span>
+        <span class="aurora__blob aurora__blob--3"></span>
+        <span class="aurora__grid"></span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow">
+            <span class="live-dot" aria-hidden="true"></span>
+            Radio studenckie · Centrum Mediów AGH · Kraków
+          </p>
+          <h1 class="hero-title" id="heroTitle">
+            Brzmienie <span class="grad-text">Krakowa</span>.<br>Na żywo, od studentów.
+          </h1>
+          <p class="hero-lead">
+            Koncerty, wywiady, newsy i muzyka, której nie usłyszysz nigdzie indziej. Włącz antenę, dołącz do czatu i bądź częścią naszej fali.
+          </p>
+
+          <!-- Odtwarzacz -->
+          <div class="stage glass" id="stage" role="region" aria-label="Odtwarzacz anteny na żywo">
+            <div class="stage__row">
+              <div class="cover" id="stageCover" data-cover>
+                <div class="cover__ring" aria-hidden="true"></div>
+                <div class="cover__art" data-cover-art>
+                  <svg class="icon cover__fallback"><use href="#i-note"/></svg>
+                </div>
+                <span class="cover__live"><i></i>LIVE</span>
+              </div>
+
+              <div class="stage__info">
+                <p class="stage__kicker">
+                  <span class="chip chip--live" data-stream-state>Antena</span>
+                  <span class="muted">128 kbps · MP3</span>
+                </p>
+                <p class="stage__label">Teraz leci</p>
+                <h2 class="stage__track" data-now-title aria-live="polite">Łączenie z anteną…</h2>
+                <p class="stage__artist" data-now-artist>Radio1.7</p>
+
+                <div class="stage__show" data-show-box>
+                  <div class="stage__show-row">
+                    <span class="stage__show-label">W ramówce</span>
+                    <strong data-show-title>Muzyka non-stop</strong>
+                    <span class="muted" data-show-time></span>
+                  </div>
+                  <div class="stage__show-row stage__show-row--next" data-show-next-row hidden>
+                    <span class="stage__show-label">Następnie</span>
+                    <span data-show-next></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stage__controls">
+              <button class="play-btn" type="button" id="stagePlayBtn" data-player-toggle aria-label="Włącz antenę">
+                <span class="play-btn__pulse" aria-hidden="true"></span>
+                <svg class="icon" data-icon-play><use href="#i-play"/></svg>
+                <svg class="icon" data-icon-pause hidden><use href="#i-pause"/></svg>
+                <span class="play-btn__spinner" aria-hidden="true"></span>
+              </button>
+
+              <canvas class="viz" id="viz" aria-hidden="true"></canvas>
+
+              <div class="volume">
+                <button class="icon-btn" type="button" id="muteBtn" aria-label="Wycisz">
+                  <svg class="icon" data-icon-volume><use href="#i-volume"/></svg>
+                  <svg class="icon" data-icon-mute hidden><use href="#i-mute"/></svg>
+                </button>
+                <input type="range" id="volumeRange" min="0" max="100" value="80" aria-label="Głośność">
+              </div>
+            </div>
+
+            <div class="stage__foot">
+              <div class="recent" id="recentWrap" hidden>
+                <span class="recent__label">Ostatnio grane</span>
+                <ul class="recent__list" id="recentList"></ul>
+              </div>
+              <button class="btn btn--ghost btn--sm stage__chat-btn" type="button" data-chat-toggle aria-controls="chat">
+                <svg class="icon"><use href="#i-chat"/></svg>
+                Otwórz czat
+                <span class="badge" data-chat-badge hidden>0</span>
+              </button>
+            </div>
+          </div>
+
+          <ul class="hero-links">
+            <li><a href="https://malopolskie-media.info/playlista/internetowe/radio1-7.html" target="_blank" rel="noopener">Co graliśmy? <svg class="icon"><use href="#i-external"/></svg></a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.magiczne.radio17agh" target="_blank" rel="noopener">Aplikacja na Androida <svg class="icon"><use href="#i-external"/></svg></a></li>
+            <li><a href="#ramowka">Zobacz ramówkę <svg class="icon"><use href="#i-arrow"/></svg></a></li>
+          </ul>
+        </div>
+
+        <!-- Miejsce na czat (panel jest przenoszony między tym slotem a szufladą) -->
+        <div class="chat-slot" id="chatSlot">
+          <aside class="chat glass" id="chat" aria-label="Czat słuchaczy" data-mode="docked">
+            <header class="chat__head">
+              <div class="chat__title">
+                <span class="chat__icon"><svg class="icon"><use href="#i-chat"/></svg></span>
+                <div>
+                  <h2>Czat słuchaczy</h2>
+                  <p class="chat__status" id="chatStatus"><i></i><span>Rozłączony</span></p>
+                </div>
+              </div>
+              <button class="icon-btn chat__close" type="button" id="chatCloseBtn" aria-label="Zamknij czat">
+                <svg class="icon"><use href="#i-close"/></svg>
+              </button>
+            </header>
+
+            <!-- Zgoda RODO – jak na obecnej stronie czat wymaga akceptacji polityki prywatności -->
+            <div class="chat__gate" id="chatGate">
+              <div class="chat__gate-art" aria-hidden="true">
+                <svg class="icon"><use href="#i-chat"/></svg>
+              </div>
+              <h3>Dołącz do rozmowy</h3>
+              <p>Aby korzystać z czatu, zaakceptuj naszą politykę prywatności. Nick i treść wiadomości są widoczne dla wszystkich słuchaczy.</p>
+              <button class="btn btn--primary" type="button" id="chatAcceptBtn">Akceptuję i wchodzę</button>
+              <a class="chat__gate-link" href="https://radio17.pl/privacy-policy" target="_blank" rel="noopener">Polityka prywatności</a>
+            </div>
+
+            <div class="chat__body" id="chatBody" hidden>
+              <div class="chat__log" id="chatLog" role="log" aria-live="polite" aria-relevant="additions" tabindex="0">
+                <button class="chat__more" type="button" id="chatMoreBtn" hidden>Starsze wiadomości</button>
+                <div class="chat__empty" id="chatEmpty" hidden></div>
+                <ol class="chat__list" id="chatList"></ol>
+              </div>
+
+              <button class="chat__jump" type="button" id="chatJumpBtn" hidden>Nowe wiadomości ↓</button>
+
+              <form class="chat__composer" id="chatForm" autocomplete="off">
+                <div class="chat__nick" id="chatNickRow">
+                  <label for="chatNick">Twój nick</label>
+                  <div class="chat__nick-field">
+                    <input id="chatNick" name="author" type="text" maxlength="64" placeholder="Jak mamy Cię nazywać?" required>
+                    <button class="btn btn--primary btn--sm" type="button" id="chatNickOk">OK</button>
+                  </div>
+                </div>
+
+                <div class="chat__compose" id="chatComposeRow" hidden>
+                  <button class="chat__who" type="button" id="chatWho" title="Zmień nick">
+                    <svg class="icon"><use href="#i-edit"/></svg>
+                    <span id="chatWhoName">gość</span>
+                  </button>
+                  <div class="chat__input-wrap">
+                    <input id="chatMsg" name="content" type="text" maxlength="150" placeholder="Napisz wiadomość…" aria-label="Wiadomość">
+                    <span class="chat__counter" id="chatCounter">0/150</span>
+                  </div>
+                  <button class="send-btn" type="submit" id="chatSendBtn" aria-label="Wyślij wiadomość">
+                    <svg class="icon"><use href="#i-send"/></svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Przewijany pasek -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Radio1.7</span><i></i><span>Studenckie radio w Krakowie</span><i></i><span>Centrum Mediów AGH</span><i></i><span>Koncerty na żywo</span><i></i><span>Wywiady</span><i></i><span>Juwenalia AGH</span><i></i>
+        <span>Radio1.7</span><i></i><span>Studenckie radio w Krakowie</span><i></i><span>Centrum Mediów AGH</span><i></i><span>Koncerty na żywo</span><i></i><span>Wywiady</span><i></i><span>Juwenalia AGH</span><i></i>
+      </div>
+    </div>
+
+    <!-- ============ RAMÓWKA ============ -->
+    <section class="section" id="ramowka" aria-labelledby="scheduleTitle" data-reveal>
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="section-kicker">Cały tydzień z nami</p>
+            <h2 class="section-title" id="scheduleTitle">Ramówka</h2>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Dzień tygodnia" id="dayTabs"></div>
+        </header>
+        <div class="schedule" id="scheduleList" aria-live="polite">
+          <div class="skeleton skeleton--row"></div>
+          <div class="skeleton skeleton--row"></div>
+          <div class="skeleton skeleton--row"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AKTUALNOŚCI ============ -->
+    <section class="section" id="aktualnosci" aria-labelledby="newsTitle" data-reveal>
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="section-kicker">Prosto z redakcji</p>
+            <h2 class="section-title" id="newsTitle">Aktualności</h2>
+          </div>
+          <a class="link-arrow" href="https://radio17.pl/news" target="_blank" rel="noopener">Wszystkie newsy <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </header>
+        <div class="bento" id="newsGrid"></div>
+        <div class="load-more"><button class="btn btn--ghost" type="button" id="newsMore" hidden>Pokaż więcej</button></div>
+      </div>
+    </section>
+
+    <!-- ============ BLOG ============ -->
+    <section class="section" id="blog" aria-labelledby="blogTitle" data-reveal>
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="section-kicker">Muzyka, koncerty, felietony</p>
+            <h2 class="section-title" id="blogTitle">Blog muzyczny</h2>
+          </div>
+        </header>
+        <div class="chips" id="blogCats" role="group" aria-label="Kategorie bloga"></div>
+        <div class="bento" id="blogGrid"></div>
+        <div class="load-more"><button class="btn btn--ghost" type="button" id="blogMore" hidden>Pokaż więcej</button></div>
+      </div>
+    </section>
+
+    <!-- ============ GORĄCA 17 ============ -->
+    <section class="section section--hot" id="hot17" aria-labelledby="hotTitle" data-reveal hidden>
+      <div class="container hot">
+        <div class="hot__intro">
+          <p class="section-kicker">Listy przebojów studentów</p>
+          <h2 class="section-title" id="hotTitle">Gorąca&nbsp;17</h2>
+          <p class="hot__lead">Najchętniej głosowane utwory bieżącej edycji. Posłuchaj ich na antenie i oddaj swój głos na stronie Radia1.7.</p>
+          <a class="btn btn--primary" href="https://radio17.pl/hot-17" target="_blank" rel="noopener">Głosuj <svg class="icon"><use href="#i-external"/></svg></a>
+        </div>
+        <ol class="hot__list" id="hotList"></ol>
+      </div>
+    </section>
+
+    <!-- ============ ZESPÓŁ ============ -->
+    <section class="section" id="zespol" aria-labelledby="teamTitle" data-reveal>
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="section-kicker">Ludzie po drugiej stronie anteny</p>
+            <h2 class="section-title" id="teamTitle">Kolegium redakcyjne</h2>
+          </div>
+        </header>
+        <div class="chips" id="teamFilters" role="group" aria-label="Filtruj zespół według redakcji"></div>
+        <div class="team" id="teamGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAKT ============ -->
+    <section class="section" id="kontakt" aria-labelledby="contactTitle" data-reveal>
+      <div class="container contact">
+        <div class="contact__intro">
+          <p class="section-kicker">Napisz, zadzwoń, wpadnij</p>
+          <h2 class="section-title" id="contactTitle">Kontakt</h2>
+          <address class="contact__address">
+            <svg class="icon"><use href="#i-pin"/></svg>
+            <span>
+              <strong>Centrum Mediów AGH</strong><br>
+              <span data-contact="street">ul. Rostafińskiego 8</span><br>
+              <span data-contact="city">30-072 Kraków</span>
+            </span>
+          </address>
+          <p class="contact__links">
+            <a class="btn btn--ghost btn--sm" id="mapLink" href="https://www.openstreetmap.org/?mlat=50.068887&mlon=19.905585#map=17/50.068887/19.905585" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg> Pokaż na mapie</a>
+            <a class="btn btn--ghost btn--sm" href="https://radio17.pl/contact/cooperation" target="_blank" rel="noopener">Współpraca</a>
+            <a class="btn btn--ghost btn--sm" href="https://radio17.pl/contact/recruitment" target="_blank" rel="noopener">Dołącz do nas</a>
+          </p>
+          <ul class="socials" id="socials" aria-label="Media społecznościowe"></ul>
+        </div>
+        <div class="contact__cards" id="contactCards"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ STOPKA ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo-light.png" alt="Radio1.7" width="1488" height="500">
+        <p>Najlepsze studenckie radio w Krakowie. Tworzone przez studentów AGH, dla wszystkich, którzy lubią dobrą muzykę.</p>
+      </div>
+      <nav class="footer-col" aria-label="Serwis">
+        <h3>Serwis</h3>
+        <a href="#live">Na żywo</a>
+        <a href="#ramowka">Ramówka</a>
+        <a href="#aktualnosci">Aktualności</a>
+        <a href="#blog">Blog muzyczny</a>
+        <a href="https://radio17.pl/about/how-to-listen" target="_blank" rel="noopener">Jak nas słuchać?</a>
+        <a href="https://radio17.pl/privacy-policy" target="_blank" rel="noopener">Polityka prywatności</a>
+      </nav>
+      <nav class="footer-col" aria-label="Centrum Mediów AGH">
+        <h3>Centrum Mediów AGH</h3>
+        <a href="https://cm.agh.edu.pl" target="_blank" rel="noopener">Centrum Mediów AGH</a>
+        <a href="https://www.ksaf.pl" target="_blank" rel="noopener">KSAF – fotografia</a>
+        <a href="https://mine.agh.edu.pl" target="_blank" rel="noopener">MINE AGH – film</a>
+        <a href="https://www.bis.agh.edu.pl" target="_blank" rel="noopener">BIS – biuletyn</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Radio1.7 · Centrum Mediów AGH</p>
+      <p class="muted">Redesign frontendu · dane i antena z radio17.pl</p>
+    </div>
+  </footer>
+
+  <!-- Szuflada czatu (gdy panel nie jest zadokowany w hero) -->
+  <div class="chat-drawer" id="chatDrawer" aria-hidden="true"></div>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- Mini-odtwarzacz -->
+  <div class="miniplayer" id="miniplayer" aria-label="Mini odtwarzacz" data-hidden="true">
+    <div class="mini__cover" data-cover-mini><svg class="icon"><use href="#i-note"/></svg></div>
+    <div class="mini__text">
+      <strong data-now-title-mini>Radio1.7</strong>
+      <span data-now-artist-mini>Na żywo</span>
+    </div>
+    <button class="icon-btn mini__chat" type="button" data-chat-toggle aria-controls="chat" aria-label="Czat">
+      <svg class="icon"><use href="#i-chat"/></svg>
+      <span class="badge badge--float" data-chat-badge hidden>0</span>
+    </button>
+    <button class="mini__play" type="button" data-player-toggle aria-label="Włącz antenę">
+      <svg class="icon" data-icon-play><use href="#i-play"/></svg>
+      <svg class="icon" data-icon-pause hidden><use href="#i-pause"/></svg>
+    </button>
+  </div>
+
+  <!-- Czytnik artykułów -->
+  <dialog class="reader" id="reader" aria-labelledby="readerTitle">
+    <article class="reader__panel">
+      <button class="icon-btn reader__close" type="button" id="readerClose" aria-label="Zamknij artykuł">
+        <svg class="icon"><use href="#i-close"/></svg>
+      </button>
+      <div class="reader__cover" id="readerCover" hidden></div>
+      <div class="reader__content">
+        <p class="reader__meta" id="readerMeta"></p>
+        <h2 class="reader__title" id="readerTitle"></h2>
+        <div class="reader__body prose" id="readerBody"></div>
+        <footer class="reader__foot">
+          <ul class="tags" id="readerTags"></ul>
+          <button class="btn btn--ghost btn--sm" type="button" id="readerShare"><svg class="icon"><use href="#i-link"/></svg> Kopiuj link</button>
+        </footer>
+      </div>
+    </article>
+  </dialog>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <noscript><p class="noscript">Ta strona wymaga włączonego JavaScriptu, aby odtwarzać antenę i czat.</p></noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

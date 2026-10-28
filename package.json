@@ -1,0 +1,14 @@
+{
+  "name": "radio17-redesign",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Redesign strony Radia1.7 (Centrum Mediów AGH) – odtwarzacz anteny na żywo, czat, ramówka, aktualności.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
