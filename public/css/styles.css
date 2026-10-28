@@ -41,6 +41,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -166,12 +167,15 @@ body[data-player='playing'] .chip--live::before { animation: ping 1.6s infinite;
   transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
   border-bottom: 1px solid transparent;
 }
-.site-header.is-scrolled {
+.site-header::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: rgba(6, 10, 12, 0.72);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border-bottom-color: var(--border);
+  opacity: 0; transition: opacity 0.3s;
 }
+.site-header.is-scrolled { border-bottom-color: var(--border); }
+.site-header.is-scrolled::before { opacity: 1; }
 .header-inner {
   height: 100%;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
@@ -243,6 +247,7 @@ body[data-player='playing'] .chip--live::before { animation: ping 1.6s infinite;
   background: var(--surface); border: 1px solid var(--border);
   font-size: 13px; font-weight: 500; color: var(--muted);
   letter-spacing: 0.01em;
+  max-width: 100%; line-height: 1.4;
 }
 .live-dot {
   width: 9px; height: 9px; border-radius: 50%;
@@ -952,7 +957,7 @@ body[data-player='playing'] .mini__cover { animation: spin 12s linear infinite; 
 
 /* ---------- responsywność ---------- */
 @media (max-width: 1100px) {
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .chat-slot { display: none; }
   .stage__chat-btn { display: inline-flex; }
   .main-nav {
@@ -971,9 +976,10 @@ body[data-player='playing'] .mini__cover { animation: spin 12s linear infinite; 
 @media (max-width: 980px) {
   .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .card--feature { grid-column: 1 / -1; grid-row: auto; min-height: 460px; }
-  .hot, .contact { grid-template-columns: 1fr; gap: 36px; }
+  .skeleton--feature { grid-column: 1 / -1; grid-row: auto; min-height: 320px; }
+  .hot, .contact { grid-template-columns: minmax(0, 1fr); gap: 36px; }
   .hot__intro { position: static; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-brand { grid-column: 1 / -1; }
   .slot { grid-template-columns: 100px 72px minmax(0, 1fr); }
   .slot__state { grid-column: 1 / -1; justify-self: start; }
@@ -992,21 +998,21 @@ body[data-player='playing'] .mini__cover { animation: spin 12s linear infinite; 
   .viz { order: 3; flex-basis: 100%; height: 52px; }
   .volume { margin-left: auto; }
   .volume input[type='range'] { width: 110px; }
-  .bento { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: minmax(0, 1fr); }
   .card--feature { min-height: 420px; }
   .card--feature .card__body { padding: 24px; }
-  .contact__cards { grid-template-columns: 1fr; }
+  .contact__cards { grid-template-columns: minmax(0, 1fr); }
   .slot { grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 14px; }
   .slot__time { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 10px; }
   .slot__img { width: 64px; height: 64px; border-radius: 14px; }
   .slot__state { grid-column: 1 / -1; }
-  .slot--gap { grid-template-columns: 1fr; }
+  .slot--gap { grid-template-columns: minmax(0, 1fr); }
   .team-group__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .person__body { padding: 14px; }
   .person__bio { -webkit-line-clamp: 3; font-size: 13px; }
   .hot__item { grid-template-columns: 42px minmax(0, 1fr) auto; gap: 10px; }
   .hot__rank { font-size: 1.5rem; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .miniplayer { bottom: 12px; }
   .chat-drawer { right: 0; left: 0; bottom: 0; width: 100%; height: min(86dvh, 760px); border-radius: 26px 26px 0 0; transform: translateY(100%); }
   .chat-drawer.is-open { transform: none; }

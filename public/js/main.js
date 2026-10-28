@@ -46,7 +46,7 @@ function initChrome() {
         reveal.unobserve(e.target);
       }
     });
-  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
   $$('[data-reveal]').forEach((s) => reveal.observe(s));
 
   $('#year').textContent = String(new Date().getFullYear());
