@@ -31,7 +31,8 @@ async function request(path, { method = 'GET', body, timeout = 15_000, signal } 
   const headers = { Accept: 'application/json' };
   if (method !== 'GET') {
     headers['Content-Type'] = 'application/json';
-    Object.assign(headers, csrfHeaders());
+    // przy zewnętrznym proxy (inny origin) CSRF dokłada worker – dodatkowe nagłówki blokuje CORS
+    if (!/^https?:\/\//i.test(CONFIG.apiBase)) Object.assign(headers, csrfHeaders());
   }
 
   try {
