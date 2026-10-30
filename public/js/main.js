@@ -6,6 +6,28 @@ import { initContent } from './content.js';
 import { initHot17, initTeam, initContact } from './sections.js';
 import { $, $$ } from './util.js';
 
+function scrollToTarget(target) {
+  const offset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+  const targetY = () => Math.max(0, target.getBoundingClientRect().top + scrollY - offset);
+  const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  scrollTo({ top: targetY(), behavior: smooth ? 'smooth' : 'auto' });
+
+  let last = -1;
+  let still = 0;
+  let tries = 0;
+  const timer = setInterval(() => {
+    still = Math.abs(scrollY - last) < 1 ? still + 1 : 0;
+    last = scrollY;
+    if (still < 3) return; // przewijanie jeszcze trwa
+    if (Math.abs(scrollY - targetY()) > 2 && tries++ < 6) {
+      still = 0;
+      scrollTo({ top: targetY(), behavior: smooth ? 'smooth' : 'auto' });
+    } else {
+      clearInterval(timer);
+    }
+  }, 100);
+}
+
 /* ---------- nagłówek: tło po przewinięciu, menu mobilne, scroll-spy ---------- */
 function initChrome() {
   const header = $('#siteHeader');
@@ -26,6 +48,17 @@ function initChrome() {
     if (nav.classList.contains('is-open') && !e.target.closest('#mainNav, #menuBtn')) setMenu(false);
   });
   document.addEventListener('keydown', (e) => e.key === 'Escape' && setMenu(false));
+
+  // przewijanie do sekcji z korektą – treść nad celem doładowuje się w trakcie animacji
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    const id = a && a.getAttribute('href').slice(1);
+    const target = id && document.getElementById(id);
+    if (!target || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    scrollToTarget(target);
+    history.replaceState(null, '', `#${id}`);
+  });
 
   // podświetlanie aktywnej sekcji
   const links = new Map($$('[data-nav]').map((a) => [a.dataset.nav, a]));
